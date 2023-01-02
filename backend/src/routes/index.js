@@ -1,0 +1,11 @@
+import { Router } from "express";
+import UserRouter from "./login.js";
+import ProductRouter from "./product.js";
+import CommentsPU from "./comment.js";
+import Favourite from "./favourite.js";
+const router = Router();
+router.use("/user", UserRouter);
+router.use("/product", ProductRouter);
+router.use("/comment", CommentsPU);
+router.use("/favourite", Favourite);
+export default router;
