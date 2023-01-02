@@ -16,9 +16,7 @@ const UserPage = () => {
   const [valueTab, setValueTab] = useState(0);
   const [update, setUpdate] = useState(false);
   const getUserArt = async () => {
-    let res = await instance.get(
-      "http://localhost:80/api/product/getProductByUser/" + auth.userid
-    );
+    let res = await instance.get("/product/getProductByUser/" + auth.userid);
     setArt(res.data.data);
     console.log(res.data.data);
   };
@@ -33,6 +31,7 @@ const UserPage = () => {
         display: "flex ",
         flexWrap: "wrap",
         background: "linear-gradient( #15A5E8 ,10px, #FFFFFF)",
+        justifyContent: "center",
       }}
     >
       <div
@@ -41,7 +40,6 @@ const UserPage = () => {
           display: "flex",
           flexWrap: "wrap",
           width: "1400px",
-          marginLeft: "250px",
           background: "white",
           height: "100vh",
         }}
@@ -49,14 +47,27 @@ const UserPage = () => {
         <div
           style={{
             marginTop: "50px",
-
             width: "1000px",
           }}
         >
-          <div style={{ fontSize: "120px", marginLeft: "200px" }}>
+          <div
+            style={{
+              fontSize: "120px",
+              fontStyle: "italic",
+              marginLeft: "200px",
+              color: "#8697F2 ",
+            }}
+          >
             {auth.username}
           </div>
-          <div style={{ fontSize: "30px", marginLeft: "200px" }}>
+          <div
+            style={{
+              fontSize: "30px",
+              fontStyle: "italic",
+              marginLeft: "200px",
+              color: "#A7CCF9 ",
+            }}
+          >
             {auth.userMail}
           </div>
         </div>

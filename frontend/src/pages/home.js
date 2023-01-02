@@ -23,6 +23,7 @@ const HomePage = () => {
         display: "flex",
         flexWrap: "wrap",
         background: "linear-gradient( #15A5E8 ,10px, #FFFFFF)",
+        justifyContent: "center",
       }}
     >
       <ProductCard product={product} />

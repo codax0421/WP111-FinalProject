@@ -52,7 +52,7 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
   const handleSubmit = async (event) => {
-    let res = await instance.post("http://localhost:80/api/user/login", {
+    let res = await instance.post("/user/login", {
       email: mail,
       password: password,
     });

@@ -110,7 +110,7 @@ const ProductPage = () => {
                 {data.description}
               </Descriptions.Item>
               <Descriptions.Item label="Author" span={3}>
-                {author.name}
+                {author.username}
               </Descriptions.Item>
             </Descriptions>
             <br></br>

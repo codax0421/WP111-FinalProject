@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { notification } from "antd";
 import instance from "../axios";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
@@ -64,10 +65,9 @@ const AddProductPage = () => {
       setStep("3");
       console.log(res.data.data);
       setIsSelected(false);
-      setStatus(2);
+      openNotification();
     } else {
       console.log("no title or description");
-      setStatus(1);
     }
   };
   const handleTitle = (e) => {
@@ -78,7 +78,16 @@ const AddProductPage = () => {
     setDescription(e.target.value);
     console.log(e.target.value);
   };
-
+  const openNotification = () => {
+    notification.open({
+      message: "Success",
+      description: "successful uploaded",
+      onClick: () => {
+        console.log("Notification Clicked!");
+      },
+    });
+    setStep("0");
+  };
   return (
     <div
       style={{
@@ -188,21 +197,6 @@ const AddProductPage = () => {
           >
             Submit
           </Button>
-          <Stack sx={{ width: "100%" }} spacing={2}>
-            <div>
-              {status === 1 ? (
-                <Alert severity="error">
-                  This is an error alert — check it out!
-                </Alert>
-              ) : status === 2 ? (
-                <Alert severity="success">
-                  This is a success alert — check it out!
-                </Alert>
-              ) : (
-                <div></div>
-              )}
-            </div>
-          </Stack>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ const SearchPage = () => {
   const location = useLocation();
   const getSearch = async () => {
     let res = await instance.get(
-      "http://localhost:80/api/product/search?search=" + location.state.search
+      "/product/search?search=" + location.state.search
     );
     console.log(res.data.data);
     setData(res.data.data);
@@ -24,6 +24,7 @@ const SearchPage = () => {
         display: "flex ",
         flexWrap: "wrap",
         background: "linear-gradient( #15A5E8 ,10px, #FFFFFF)",
+        justifyContent: "center",
       }}
     >
       <ProductCard product={data} />

@@ -32,7 +32,6 @@ const ProductCard = ({ product }) => {
       style={{
         display: "flex",
         marginTop: "150px",
-        marginLeft: "250px",
         flexWrap: "wrap",
         width: "1350px",
         borderRadius: "3%",
