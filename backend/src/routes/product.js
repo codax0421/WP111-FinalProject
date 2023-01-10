@@ -13,7 +13,7 @@ router.use(express.json());
 const auth =
   "Basic " +
   Buffer.from(
-    "2JYLZ0WohkZ2j7inIaChUb8TQTc" + ":" + "8d163a7d13ab0be66c8f49848d8e5792"
+  //enter ur own infura
   ).toString("base64");
 const ipfs = create({
   host: "ipfs.infura.io",
